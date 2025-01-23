@@ -1,38 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALT-R Labs</title>
-    <style>
-        body {
-            background-color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        header {
-            margin-top: 20px;
-        }
-        img {
-            max-width: 200px;
-        }
-        .content {
-            text-align: center;
-            padding: 20px;
-            max-width: 500px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="description" content="ALT-R LABS INC. - AI innovation for a better tomorrow." />
+  <meta name="keywords" content="AI, Innovation, Technology, Solutions" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALT-R LABS INC.</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <img src="logo-r.png" alt="ALT-R Labs Logo">
-    </header>
-    <div class="content">
-        <p>At ALT-R Labs, we innovate for a better tomorrow. We "find" the your business needs and "replace" with intelligent solutions. Our team is dedicated to advancing AI and creating solutions that make a difference.</p>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/altr-logo.png" alt="ALT-R Labs Logo" />
+        <span class="brand-name">ALT-R LABS</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>ALT-R LABS INC.</h1>
+      <p>We innovate for a better tomorrow, finding your business needs and replacing them with intelligent solutions.</p>
+      <a href="#about" class="btn-primary">Learn More</a>
     </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="about-content">
+      <h2>Who We Are</h2>
+      <p>
+        At ALT-R Labs, we innovate for a better tomorrow. We <strong>find</strong> your business needs
+        and <strong>replace</strong> them with intelligent solutions. Our team is dedicated
+        to advancing AI and creating solutions that truly make a difference.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="service-card">
+        <h3>AI Consulting</h3>
+        <p>Work with our experts to design AI strategies that transform your workflows, reduce costs, and maximize efficiency.</p>
+      </div>
+      <div class="service-card">
+        <h3>Custom AI Solutions</h3>
+        <p>We tailor advanced AI tools—like machine learning models and data analytics—to fit your specific business needs.</p>
+      </div>
+      <div class="service-card">
+        <h3>Automation & Integration</h3>
+        <p>Connect siloed applications and automate repetitive tasks to streamline your operations end to end.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Ready to take your business to the next level? Get in touch.</p>
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <textarea name="message" placeholder="Message" required></textarea>
+      <button type="submit" class="btn-submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> ALT-R LABS INC. All rights reserved.</p>
+  </footer>
+
+  <!-- Smooth Scroll JS -->
+  <script>
+    // Update footer year automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetEl = document.getElementById(targetId);
+        window.scrollTo({
+          top: targetEl.offsetTop - 70, // adjust offset for fixed header
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
